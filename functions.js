@@ -27,9 +27,15 @@ function anotherSubtract(num1, num2, num3 = 3) {
 }
 console.log(anotherSubtract(10, 5));
 console.log(anotherSubtract(10, 5, 2));
-// Function with a list of parameters
+// Function with a variable list of parameters (rest parameters)
 function addition(num1, num2, ...num3) {
     return num1 + num2 + num3.reduce((a, b) => a + b, 0);
 }
 let numbers = [1, 2, 3];
 console.log(addition(1, 2, 10, 20, 30, ...numbers));
+// Generic function
+function getItems(items) {
+    return new Array().concat(items);
+}
+let concatResult = getItems([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+let concatString = getItems(["a", "b", "c", "d", "e"]);
