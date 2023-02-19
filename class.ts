@@ -1,7 +1,19 @@
 /**
+ * Importing the properties and functionalities of Login and User interfaces
+ * located in the interface file.
+ */
+import {Login} from "./interface";
+
+/**
+ * Importing the functionalities of Login and User interfaces by using an alias
+ * <UserLogin>.
+ */
+import * as UserLogin from "./interface";
+
+/**
  * Class that represents an Employee.
  */
-class Employee {
+class Employee implements Login {
     /**
      * Properties declared to represent the main aspects of an employee.
      * A property initialized by a constructor does not require the
@@ -25,6 +37,14 @@ class Employee {
         this.#name = name;
         this.address = address;
         this.gender = gender;
+    }
+
+    /**
+     * Method login provided by the Login interface.
+     * It is possible to access the User interface by using the alias created.
+     */
+    login(): UserLogin.User {
+        return {name: "Albert", id: 19, email: "jahm.developer@gmail.com"};
     }
 
     /**
